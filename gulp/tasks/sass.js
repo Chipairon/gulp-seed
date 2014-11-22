@@ -6,10 +6,10 @@ var config = require('../config').sass;
 gulp.task('sass', ['images'], function () {
   return gulp.src(config.src)
     .pipe(sass({
-      compass: true,
-      bundleExec: true,
       sourcemap: true,
-      sourcemapPath: '../sass'
+      sourcemapPath: '../sass',
+      // set this to true to disable visual notificationand see instead the error on console:
+      errLogToConsole: false
     }))
     .on('error', handleErrors)
     .pipe(gulp.dest(config.dest));
