@@ -1,6 +1,7 @@
 _          = require 'underscore'
 Backbone   = require 'backbone'
 Backbone.$ = require 'jquery'
+Marionette = require 'backbone.marionette'
 plugin     = require 'plugin'
 
 module.exports = Backbone.View.extend
