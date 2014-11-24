@@ -1,0 +1,8 @@
+p
+  | <%= description %>
+ul
+  | <% _.each(tools, function(tool) { %>
+  li
+    | <%= tool %>
+  | <% }); %>
+img(src="/images/gulp.png" alt="")

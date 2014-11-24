@@ -3,10 +3,10 @@ Backbone   = require 'backbone'
 Backbone.$ = require 'jquery'
 Marionette = require 'backbone.marionette'
 plugin     = require 'plugin'
-
 module.exports = Backbone.View.extend
 
-  template: require './template'
+  #template: tte
+  template: JST['template']
 
   initialize: ->
     underscoreTest = _.last([0,1,2, 'hi mom!'])

@@ -75,5 +75,5 @@ gulp.task('browserify', function(callback) {
   };
 
   // Start bundling with Browserify for each bundleConfig specified
-  config.bundleConfigs.forEach(browserifyThis);
+  return config.bundleConfigs.forEach(browserifyThis);
 });
