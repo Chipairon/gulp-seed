@@ -20,15 +20,16 @@ module.exports = Backbone.View.extend
         'Browserify / Watchify'
         'BrowserSync'
         'CoffeeScript'
-        'Compass'
         'SASS'
-        'Handlebars'
+        'Jade templates for server and client'
+        'JST templates available on client code'
         'Image optimization'
         'LiveReload'
         'Non common-js jquery plugin'
         'Npm backbone'
+        'Npm backbone.marionette'
         'Npm jquery'
-        'Underscore (included with Backbone)'
+        'Underscore'
       ]
 
     plugin()

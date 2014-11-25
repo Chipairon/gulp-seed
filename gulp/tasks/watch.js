@@ -7,6 +7,7 @@ var gulp  = require('gulp');
 var config= require('../config');
 
 gulp.task('watch', ['setWatch', 'browserSync'], function() {
+  gulp.watch('../src/**/*.coffee', ['lint']);
   gulp.watch(config.sass.src, ['sass']);
   gulp.watch(config.jadeJst.src, ['jst']);
   gulp.watch(config.jadeViews.src, ['jade']);
