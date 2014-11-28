@@ -3,33 +3,22 @@ Backbone   = require 'backbone'
 Backbone.$ = require 'jquery'
 Marionette = require 'backbone.marionette'
 plugin     = require 'plugin'
-module.exports = Backbone.View.extend
 
-  #template: tte
-  template: JST['template']
+Item = Backbone.Model.extend({})
+ItemCollection = Backbone.Collection.extend({
+  model: Item
+})
 
-  initialize: ->
-    underscoreTest = _.last([0,1,2, 'hi mom!'])
-    @render()
+RowView = Marionette.ItemView.extend
+  tagName: 'li',
+  template: JST['row_template']
 
-  render: ->
-    @$el.html @template
-      description: 'Starter Gulp + Browserify project equipped to handle the following:'
-      tools: [
-        'Browserify-shim'
-        'Browserify / Watchify'
-        'BrowserSync'
-        'CoffeeScript'
-        'SASS'
-        'Jade templates for server and client'
-        'JST templates available on client code'
-        'Image optimization'
-        'LiveReload'
-        'Non common-js jquery plugin'
-        'Npm backbone'
-        'Npm backbone.marionette'
-        'Npm jquery'
-        'Underscore'
-      ]
+MainView = Marionette.CompositeView.extend
+  childView: RowView,
+  childViewContainer: 'ul',
+  template: JST['main_template']
+  initialize: (options) ->
+    this.collection = options.collection
 
-    plugin()
+exports.MainView = MainView
+exports.ItemCollection = ItemCollection

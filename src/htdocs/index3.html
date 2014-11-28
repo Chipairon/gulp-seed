@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Backbone/Marionette using data from Google Spreadsheet rendered in a Composite View</title>
+    <style type="text/css">
+        body {
+            background: #ffffff;
+        }
+        #AppBase {
+            width: 600px;
+            margin: 10px auto 0 auto;
+            padding: 0;
+        }
+        h1 {
+            font: bold 16px/24px arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            width: 600px;
+            border-collapse: collapse;
+        }
+        th {
+            font: 14px/18px courier;
+            width: 200px;
+            text-align: center;
+            border: 1px solid #808080;
+            background: #ededed;
+            cursor: pointer;
+        }
+        th:hover {
+            background: #cdcdcd;
+            color: #990000;
+        }
+        td {
+            font: 14px/18px courier;
+            width: 200px;
+            border: 1px solid #808080;
+        }
+        tfoot td {
+            width: 600px;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="grid">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.2.2/backbone.marionette.js"></script>
+    <script id="grid-template" type="text/template">
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Full Name</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </script>
+
+    <script id="row-template" type="text/template">
+      <td>
+        <%= username %>
+      </td>
+      <td>
+        <%= fullname %>
+      </td>
+    </script>
+
+    <script>
+      var GridRow = Backbone.Marionette.ItemView.extend({
+        template: "#row-template",
+        tagName: "tr"
+      });
+
+      var GridView = Backbone.Marionette.CompositeView.extend({
+        template: "#grid-template",
+        childView: GridRow,
+        childViewContainer: 'tbody'
+      });
+
+      var userData = [
+        { username: "dbailey", fullname: "Derick Bailey" },
+        { username: "jbob", fullname: "Joe Bob" },
+        { username: "fbar", fullname: "Foo Bar"}
+      ];
+
+      var User = Backbone.Model.extend({
+        defaults: { username: "algo", fullname: "no quero" }
+      });
+
+      var UserCollection = Backbone.Collection.extend({ model: User });
+
+      var userList = new UserCollection(userData);
+
+      var gridView = new GridView({ collection: userList });
+
+      gridView.render();
+      console.log(gridView.el);
+      $("#grid").html(gridView.el);
+    </script>
+  </body>
+</html>
+
