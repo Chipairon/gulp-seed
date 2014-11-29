@@ -20,8 +20,8 @@ Goodies included:
 - [Jade](http://jade-lang.com/) (to autor HTML on client and server)
 - [JST](https://www.npmjs.org/package/gulp-jst) (to compile javascript templates serverside and make them available to client code)
 - [BrowserSync](http://browsersync.io) (to live reload browser and as static server).
-- Image optimization.
-- Error Notifications in Notification Center.
+- [ImageMin](https://www.npmjs.org/package/gulp-imagemin) Image optimization.
+- [Error Notification](https://www.npmjs.org/package/gulp-notify) Error Notifications in Notification Center.
 
 
 ### Intallation
