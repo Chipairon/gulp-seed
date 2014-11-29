@@ -10,12 +10,14 @@ ItemCollection = Backbone.Collection.extend({
 })
 
 RowView = Marionette.ItemView.extend
-  tagName: 'li',
+  tagName: 'li'
+  className: 'list-group-item'
   template: JST['row_template']
 
 MainView = Marionette.CompositeView.extend
   childView: RowView,
-  childViewContainer: 'ul',
+  childViewContainer: 'ul'
+  className: 'list-group'
   template: JST['main_template']
   initialize: (options) ->
     this.collection = options.collection

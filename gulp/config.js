@@ -16,7 +16,7 @@ module.exports = {
   },
   sass: {
     src: src + "/sass/*.{sass,scss}",
-    dest: dest
+    dest: dest + "/styles"
   },
   jadeViews: {
     src: ['./src/**/*.jade', '!./src/javascript/templates/*'],
@@ -32,7 +32,11 @@ module.exports = {
   },
   markup: {
     src: src + "/htdocs/**/*.html",
-    dest: dest
+    dest: dest + "/htdocs"
+  },
+  fonts: {
+    src: "./node_modules/bootstrap-sass/assets/fonts/**/*",
+    dest: dest + "/fonts"
   },
   browserify: {
     // Enable source maps
@@ -43,11 +47,11 @@ module.exports = {
     // bundle config in the list below
     bundleConfigs: [{
       entries: src + '/javascript/app.coffee',
-      dest: dest,
+      dest: dest + "/js",
       outputName: 'app.js'
     }, {
       entries: src + '/javascript/head.coffee',
-      dest: dest,
+      dest: dest + "/js",
       outputName: 'head.js'
     }]
   }

@@ -4,7 +4,7 @@ var handleErrors = require('../util/handleErrors');
 var config = require('../config').sass;
 
 gulp.task('sass', ['images'], function () {
-  return gulp.src(config.src)
+  return gulp.src(["./src/sass/*.{sass,scss}", "./node_modules/bootstrap-sass/assets/stylesheets/**/*.{sass,scss}"])
     .pipe(sass({
       sourcemap: true,
       sourcemapPath: '../sass',
