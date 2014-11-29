@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2014 Daniel Tello
+Copyright (c) 2014 Rubén Díaz-Jorge Gil // http://rubendiazjorge.me
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+This started as a fork from https://github.com/greypants/gulp-starter
+Original code and its licensing can be found here:
+  https://github.com/greypants/gulp-starter
+  https://github.com/greypants/gulp-starter/blob/master/LICENSE.md

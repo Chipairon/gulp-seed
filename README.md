@@ -1,87 +1,56 @@
-gulp-starter
-============
+Chipairon gulp-seed
+===================
 
-Starter Gulp + Browserify project with examples of how to accomplish some common tasks and workflows. Read the [blog post](http://viget.com/extend/gulp-browserify-starter-faq) for more context, and check out the [Wiki](https://github.com/greypants/gulp-starter/wiki) for some good background knowledge.
+This is a seed to start a proyect for front end web development.
 
-Includes the following tools, tasks, and workflows:
+It uses the [NPM](http://www.npmjs.org) to manage dependencies and [Gulp](http://gulpjs.com) as a build/automation system.
 
-- [Browserify](http://browserify.org/) (with [browserify-shim](https://github.com/thlorenz/browserify-shim))
-- [Watchify](https://github.com/substack/watchify) (caching version of browserify for super fast rebuilds)
-- [SASS](http://sass-lang.com/) (with [compass](http://compass-style.org/) and [source maps](https://github.com/sindresorhus/gulp-ruby-sass#sourcemap)!)
-- [CoffeeScript](http://coffeescript.org/) (with source maps!)
-- [jQuery](http://jquery.com/) (from npm)
-- [Backbone](http://backbonejs.org/) (from npm)
-- [Handlebars](http://handlebarsjs.com/) (as a backbone dependency)
-- [BrowserSync](http://browsersync.io) for live reloading and a static server
-- Image optimization
-- Error Notifications in Notification Center
-- Non common-js vendor code (like a jQuery plugin)
+See a demo here: http://rubendiazjorge.me/gulp-seed
 
-If you've never used Node or npm before, you'll need to install Node.
-If you use homebrew, do:
+Goodies included:
 
-```
-brew install node
-```
-
-Otherwise, you can download and install from [here](http://nodejs.org/download/).
-
-### Install Gulp Globally
-
-Gulp must be installed globally in order to use the command line tools. *You may need to use `sudo`*
+- [Browserify](http://browserify.org/) (with [browserify-shim](https://github.com/thlorenz/browserify-shim)).
+- [Watchify](https://github.com/substack/watchify) (caching version of browserify for super fast rebuilds).
+- [SASS](http://sass-lang.com/) (to autor css files, with sourcemaps support. Using libsas to improve speed significantly).
+- [CoffeeScript](http://coffeescript.org/) (with source maps!).
+- [jQuery](http://jquery.com/) (from npm).
+- [Bootstrap](http://getbootstrap.com) (from npm).
+- [Backbone](http://backbonejs.org/) (from npm).
+- [Marionette](http://marionettejs.com/) (from npm).
+- [Jade](http://jade-lang.com/) (to autor HTML on client and server)
+- [JST](https://www.npmjs.org/package/gulp-jst) (to compile javascript templates serverside and make them available to client code)
+- [BrowserSync](http://browsersync.io) (to live reload browser and as static server).
+- Image optimization.
+- Error Notifications in Notification Center.
 
 
-```
-npm install -g gulp
-```
+### Intallation
 
-Alternatively, you can run the version of gulp installed local to the project instead with
+##### Prerequesites
+- You need to have node [installed](http://nodejs.org/download/).
+- You need to have gulp installed. To install it globally run `npm install -g gulp`
 
+To install/update the seed run:
 
 ```
-./node_modules/.bin/gulp
-```
-
-### Install Sass and Compass (if you haven't already)
-
-
-The gulp-compass module relies on Compass already being installed on your system.
-
-If you have bundler installed, simply run bundle to install dependencies from the `Gemfile`
-
-
-```
-bundle
-```
-
-Otherwise,
-
-
-```
-gem install sass
-gem install compass --pre
-```
-
-### Install npm dependencies
-
-```
+mkdir awesome
+cd awesome
+git clone https://github.com/Chipairon/gulp-seed.git .
 npm install
 ```
 
 This runs through all dependencies listed in `package.json` and downloads them
 to a `node_modules` folder in your project directory.
 
-### Run gulp and be amazed.
+### Gulp usage
 
-```
-gulp
-```
+- Run `gulp watch` to start a static server and begin watching your files.
+- The results of the build will be put on './build' folder. You can change this on the configuration file `gulp/config.js`
 
-This will run the `default` gulp task defined in `gulp/tasks/default.js`, which does the following:
-- Run 'watch', which has 2 task dependencies, `['setWatch', 'browserSync']`
-- `setWatch` sets a variable that tells the browserify task whether or not to use watchify.
-- `browserSync` has `build` as a task dependecy, so that all your assets will be processed before browserSync tries to serve them to you in the browser.
-- `build` includes the following tasks: `['browserify', 'sass', 'images', 'markup']`
 
-### Configuration
-All paths and plugin settings have been abstracted into a centralized config object in `gulp/config.js`. Adapt the paths and settings to the structure and needs of your project.
+### Attribution
+This started as a fork from https://github.com/greypants/gulp-starter to adapt it to my personal needs.
+
+Original code and its licensing can be found here:
+  https://github.com/greypants/gulp-starter
+  https://github.com/greypants/gulp-starter/blob/master/LICENSE.md
