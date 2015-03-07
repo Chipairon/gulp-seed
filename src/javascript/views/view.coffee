@@ -1,9 +1,5 @@
-_          = require 'underscore'
-Backbone   = require 'backbone'
-Backbone.$ = require 'jquery'
-Marionette = require 'backbone.marionette'
-plugin     = require 'plugin'
-
+plugin = require 'plugin'
+plugin.msg()
 Item = Backbone.Model.extend({})
 ItemCollection = Backbone.Collection.extend({
   model: Item
